@@ -21,9 +21,11 @@ public class Server {
 	public static boolean tryConnection() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
+			//Replace IP with the ip from the READ ME text file and replace user and password with the provided credientials from the READ ME text file
+			//Additionaly, I will also provide what the line below should look like to allow access to the mysql server
 			connection = DriverManager.getConnection(
-					"jdbc:mysql://18.224.21.160:3306/users?connectTimeout=4000&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
-					"Dev", "workspace2?");
+					"jdbc:mysql://IP:3306/users?connectTimeout=4000&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
+					"user", "password");
 			return true;
 		} catch (Exception e) {
 			return false;
